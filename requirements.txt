@@ -1,0 +1,2 @@
+tkinter           # GUI framework (built-in with Python for most systems)
+pyinstaller       # For building the executable

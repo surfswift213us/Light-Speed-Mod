@@ -1,0 +1,100 @@
+﻿import os
+import subprocess
+
+# Helper function to run a command
+def run_command(cmd, cwd=None):
+    """
+    Run a shell command with optional working directory and handle errors gracefully.
+    """
+    print(f"Running: {cmd} in {cwd or os.getcwd()}")
+    try:
+        result = subprocess.run(cmd, shell=True, cwd=cwd, check=True)
+        print(f"Command succeeded: {cmd}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: Command '{cmd}' failed with return code {e.returncode}")
+        Exit(1)
+
+# Build vcpkg
+def build_vcpkg(target, source, env):
+    """
+    Build the vcpkg package manager.
+    """
+    print("Starting vcpkg build...")
+    vcpkg_dir = "vcpkg"
+    bootstrap_script = os.path.join(vcpkg_dir, "bootstrap-vcpkg.bat")
+    
+    # Debugging output
+    print(f"Looking for bootstrap script: {bootstrap_script}")
+    
+    if not os.path.exists(bootstrap_script):
+        print(f"Error: {bootstrap_script} not found in {os.getcwd()}!")
+        Exit(1)
+    run_command(bootstrap_script, cwd=vcpkg_dir)
+
+# Build SWIG
+def build_swig(target, source, env):
+    """
+    Build the SWIG tool by running its autogen.sh, configure, and make steps.
+    """
+    print("Starting SWIG build...")
+    swig_dir = "swig"
+    autogen_script = os.path.join(swig_dir, "autogen.sh")
+    
+    # Debugging output
+    print(f"Looking for autogen script: {autogen_script}")
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Contents of swig directory: {os.listdir(swig_dir)}")
+    
+    if not os.path.exists(autogen_script):
+        print(f"Error: {autogen_script} not found!")
+        Exit(1)
+
+    # Ensure compatibility with Windows
+    if os.name == 'nt':
+        print("Running on Windows: Make sure you have Git Bash or WSL installed")
+        # Use Git Bash or a similar shell to run .sh files
+        run_command(f"bash {autogen_script}", cwd=swig_dir)
+    else:
+        # Ensure the script is executable on Unix-like systems
+        if not os.access(autogen_script, os.X_OK):
+            print(f"Making {autogen_script} executable.")
+            os.chmod(autogen_script, 0o755)
+        run_command(f"{autogen_script}", cwd=swig_dir)
+
+    # Run the SWIG build steps
+    run_command("./configure", cwd=swig_dir)
+    run_command("make", cwd=swig_dir)
+
+# Environment setup
+def setup_environment():
+    """
+    Create the SCons build environment and define build targets.
+    """
+    print("Setting up the build environment...")
+    # Create the environment
+    env = Environment()
+    
+    # Vcpkg setup
+    print("Defining vcpkg build target...")
+    env.Command("vcpkg_build", None, Action(build_vcpkg))
+    
+    # SWIG setup
+    print("Defining SWIG build target...")
+    env.Command("swig_build", None, Action(build_swig))
+    
+    # Set default targets
+    Default("vcpkg_build", "swig_build")
+    
+    return env
+
+# Main entry point
+if __name__ == "__main__":
+    print("Initializing build environment...")
+    env = setup_environment()
+    print("Build process completed successfully!")
+    print(r"""
+    ===================================
+    | Welcome to Lightspeed 🚀       |
+    | Your installation is complete! |
+    ===================================
+    """)
