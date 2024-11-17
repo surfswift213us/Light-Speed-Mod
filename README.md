@@ -42,3 +42,5 @@ project_root/
 ├── .sconsign.dblite     # SCons metadata file
 ├── README.md            # Project README file
 └── requirements.txt     # Python dependencies
+
+![Light Speed Mod GUI](assets/AppGUI.png "Light Speed Mod GUI")
