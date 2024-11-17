@@ -44,3 +44,6 @@ project_root/
 └── requirements.txt     # Python dependencies
 
 ![Light Speed Mod GUI](assets/AppGUI.png "Light Speed Mod GUI")
+
+Rebuild: 
+python.exe -m PyInstaller --onefile --windowed mod_GUI.py
