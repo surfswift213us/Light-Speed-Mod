@@ -1,4 +1,4 @@
-# LightSpeed Mod Installer 🚀
+# LightSpeed Mod Installer 🚀 [WIP]
 
 LightSpeed Mod Installer is a GUI-based application designed to simplify the management and installation of libraries, modules, and utilities for Godot Engine projects. Featuring a sleek Matrix-style interface and dynamic script execution, it’s the ultimate tool for Godot developers who want to go faster than ever.
 
