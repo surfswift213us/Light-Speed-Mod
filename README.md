@@ -1,22 +1,20 @@
-﻿# LightSpeed Mod Installer 🚀
+# LightSpeed Mod Installer 🚀
 
-LightSpeed Mod Installer is a GUI-based application designed to simplify the management and installation of libraries, modules, and utilities for **Godot Engine** projects. Featuring a sleek `Matrix-style` interface and dynamic script execution, it’s the ultimate tool for Godot developers who want to go faster than ever.
+LightSpeed Mod Installer is a GUI-based application designed to simplify the management and installation of libraries, modules, and utilities for Godot Engine projects. Featuring a sleek Matrix-style interface and dynamic script execution, it’s the ultimate tool for Godot developers who want to go faster than ever.
 
----
+![Light Speed Mod GUI](assets/AppGUI.png "Light Speed Mod GUI")
 
 ## 🎨 Features
 
-- **Matrix-Style Background**: A visually appealing animated effect.
-- **ASCII Art Integration**: Eye-catching logo for your application.
+- **Matrix-Style Background**: A visually appealing animated effect to make your experience more futuristic.
+- **ASCII Art Integration**: Eye-catching logos for your application.
 - **Godot Module Management**:
   - Browse and select your Godot engine folder.
-  - Install libraries like `PhysX`, `TensorFlow`, and `geometry3`.
-  - Execute utility scripts dynamically.
+  - Install libraries like PhysX, TensorFlow, and geometry3.
+  - Execute utility scripts dynamically from within the GUI.
 - **Dynamic Console Logging**: View logs directly in the application console.
 - **Utility Scripts**:
-  - Automatically handle bindings, wrappers, SCsub configurations, and more.
-
----
+  - Automatically handle bindings, wrappers, SCsub configurations, and much more.
 
 ## 📂 Project Structure
 
@@ -43,7 +41,3 @@ project_root/
 ├── README.md            # Project README file
 └── requirements.txt     # Python dependencies
 
-![Light Speed Mod GUI](assets/AppGUI.png "Light Speed Mod GUI")
-
-Rebuild: 
-python.exe -m PyInstaller --onefile --windowed mod_GUI.py
