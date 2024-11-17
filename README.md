@@ -20,7 +20,7 @@ Prebuilt Libraries and Utilities
 LightSpeed also comes with prebuilt libraries and utilities to supercharge your workflow. Don’t forget to check them out!
 LS_Boost_Mod (TBA)
 
-This utility will bootstrap Godot with the Boost library, providing an additional layer of functionality and power to your Godot projects.
+This utility will bootstrap Godot with the Boost library, providing an additional layer of functionality and power to your Godot engine.
 
 ![Light Speed Mod GUI](assets/AppGUI.png "Light Speed Mod GUI")
 
