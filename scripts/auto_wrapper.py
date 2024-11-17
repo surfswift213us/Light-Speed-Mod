@@ -9,8 +9,8 @@ logging.basicConfig(filename='integration_log.txt', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Paths (Modify these paths as per your setup)
-SWIG_PATH = "C:\\Users\\MainFrame\\Mirror\\Pictures\\LightSpeed_GoDot_4\\swigwin\\swig.exe"
-GODOT_MASTER_PATH = "C:\\Users\\MainFrame\\Mirror\\Pictures\\LightSpeed_GoDot_4"
+SWIG_PATH = ""
+GODOT_MASTER_PATH = ""
 MODULE_NAME = "eigen3_integration"
 INCLUDE_PATH = os.path.join(GODOT_MASTER_PATH, "modules", MODULE_NAME, "include")
 

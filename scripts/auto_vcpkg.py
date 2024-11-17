@@ -4,8 +4,8 @@ import sys
 import shutil
 
 # Set to the actual paths on your system
-VCPKG_PATH = "C:\\Users\\MainFrame\\Mirror\\Pictures\\LightSpeed_GoDot_4\\vcpkg\\vcpkg.exe"  # Full path to vcpkg executable
-GODOT_MASTER_PATH = "C:\\Users\\MainFrame\\Mirror\\Pictures\\LightSpeed_GoDot_4"
+VCPKG_PATH = ""  # Full path to vcpkg executable
+GODOT_MASTER_PATH = ""
 TRIPLET = "x64-windows"  # Modify as needed, e.g., x64-linux
 
 # Initialize checklist to keep track of completed steps

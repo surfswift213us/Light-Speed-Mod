@@ -1,2 +1,4 @@
+requests          # HTTP library to perform queries
+beautifulsoup4    # HTML parsing to scrape vcpkg package info
 tkinter           # GUI framework (built-in with Python for most systems)
 pyinstaller       # For building the executable
